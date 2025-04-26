@@ -56,6 +56,55 @@ uvicorn main:app --reload
 ```
 ---
 
+
+## 🏗️ How It’s Built
+
+**Startup Deck Copilot** is architected using modular AI agents orchestrated with the [LangGraph](https://langgraph.readthedocs.io/) framework, all packaged behind a FastAPI server for easy deployment and API access.
+
+### ✨ Core Components
+
+- **Pitch Deck Scorer**  
+  - Inputs images of pitch deck slides
+  - Uses **Gemini 2.0 Flash** for OCR and visual understanding
+  - Generates a structured summary of key startup information (problem, solution, traction, market, business model, team, funding) using **GPT-4o-mini**
+  - Scores the startup against a predefined, customizable rubric
+
+- **Market Research Agent**  
+  - Uses Tavily Search to research sector, market size, and competitor landscape
+  - Summarizes search results using **GPT-4o-mini**
+
+- **GitHub Viewer Agent**  
+  - Uses Firecrawl to scrape the startup’s GitHub repositories
+  - Summarizes repository activity, health, and community engagement
+
+- **QA Chatbot**  
+  - Built as a Retrieval-Augmented Generation (RAG) system
+  - Indexes startup profiles into Elasticsearch
+  - On query, retrieves most relevant context and answers using **GPT-4o-mini**
+
+- **Supervisor Agent**  
+  - Orchestrates the full analysis pipeline:
+    1. **Pitch Deck Scorer**
+    2. **Market Research Agent**
+    3. **GitHub Viewer Agent** (conditional)
+
+---
+
+### 🛠️ Stack
+
+| Layer | Technology |
+|:---|:---|
+| Vision Model | Gemini 2.0 Flash |
+| Language Model | GPT-4o-mini |
+| Agent Orchestration | [LangGraph](https://langgraph.readthedocs.io/) |
+| API Server | [FastAPI](https://fastapi.tiangolo.com/) |
+| Web Search | [Tavily API](https://docs.tavily.com/) |
+| Web Scraping | [Firecrawl](https://firecrawl.dev/) |
+| Vector Database (RAG) | [Elasticsearch](https://www.elastic.co/elasticsearch/) |
+
+
+---
+
 ## 📚 API Endpoints
 
 - ```POST /analyze-complete```: Full pitch deck analysis
