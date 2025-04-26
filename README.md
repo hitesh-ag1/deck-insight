@@ -1,6 +1,6 @@
-# 🚀 Startup Deck Copilot
+# 🚀 Deck Insight
 
-**Startup Deck Copilot** is an open-source AI tool to **analyze, summarize, and score startup pitch decks** automatically.
+**Deck Insight** is an open-source AI tool to **analyze, summarize, and score startup pitch decks** automatically.
 
 - 📄 Upload a startup's pitch deck (PDF)
 - 📋 Extracts and structures key information
@@ -50,6 +50,10 @@ cp .env.example .env
 ```
 Add your API keys to .env
 
+5. Run FastAPI server:
+```bash
+uvicorn main:app --reload
+```
 ---
 
 ## 📚 API Endpoints
