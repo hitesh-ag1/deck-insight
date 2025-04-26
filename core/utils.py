@@ -15,7 +15,7 @@ from langchain_core.messages import (
     ChatMessage as LangchainChatMessage,
 )
 from langgraph.types import Command
-from schema import ChatMessage, UserInput
+from core.schema import ChatMessage, UserInput
 from fastapi import HTTPException
 from langgraph.pregel import Pregel
 

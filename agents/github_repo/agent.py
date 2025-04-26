@@ -1,7 +1,7 @@
 from firecrawl import FirecrawlApp
 from langchain_openai import ChatOpenAI
-from settings import settings
-from prompts import GITHUB_ORG_DETAILS_EXTRACT_PROMPT
+from core.settings import settings
+from core.prompts import GITHUB_ORG_DETAILS_EXTRACT_PROMPT
 from langgraph.graph import StateGraph
 
 from langchain_core.runnables import RunnableLambda

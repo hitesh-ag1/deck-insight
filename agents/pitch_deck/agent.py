@@ -5,7 +5,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from typing import Union, Literal
 from langchain_elasticsearch import ElasticsearchStore
 from langchain_openai import OpenAIEmbeddings
-from settings import settings
+from core.settings import settings
 from uuid import uuid4
 from langchain_core.documents import Document
 from langgraph.checkpoint.memory import MemorySaver

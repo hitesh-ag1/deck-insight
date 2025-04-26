@@ -12,8 +12,8 @@ from langgraph.managed import RemainingSteps
 from langgraph.prebuilt import ToolNode
 from langchain_community.tools.tavily_search import TavilySearchResults
 from langchain_openai import ChatOpenAI
-from prompts import MARKET_RESEARCH_PROMPT
-from settings import settings
+from core.prompts import MARKET_RESEARCH_PROMPT
+from core.settings import settings
 from agents.market_size.models import (
     GraphState,
     MarketResearchResponse    

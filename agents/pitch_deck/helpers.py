@@ -4,7 +4,7 @@ from langchain_openai import ChatOpenAI
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.messages import HumanMessage
 from langchain_community.tools.tavily_search import TavilySearchResults
-from prompts import SLIDE_TO_TEXT_PROMPT, SUMMARIZE_COMPANY_OVERVIEW_PROMPT, SUMMARIZE_FOUNDER_MARKET_FIT_PROMPT, SUMMARIZE_MARKET_SIZING_PROMPT, SUMMARIZE_TRACTION_PROMPT, SCORING_PROMPT
+from core.prompts import SLIDE_TO_TEXT_PROMPT, SUMMARIZE_COMPANY_OVERVIEW_PROMPT, SUMMARIZE_FOUNDER_MARKET_FIT_PROMPT, SUMMARIZE_MARKET_SIZING_PROMPT, SUMMARIZE_TRACTION_PROMPT, SCORING_PROMPT
 from google.api_core.exceptions import ResourceExhausted
 from agents.pitch_deck.models import (
     CompanyOverview,
@@ -13,7 +13,7 @@ from agents.pitch_deck.models import (
     Traction,
     ProcessSlideResponse,
 )
-from settings import settings
+from core.settings import settings
 
 def vision_model_fn(input_dict):
     image_bytes = input_dict["image"]

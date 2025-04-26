@@ -1,5 +1,5 @@
 from langchain_elasticsearch import ElasticsearchStore
-from settings import settings
+from core.settings import settings
 from langchain_openai import OpenAIEmbeddings, ChatOpenAI
 from langgraph.graph import MessagesState, StateGraph
 from langchain_core.tools import tool

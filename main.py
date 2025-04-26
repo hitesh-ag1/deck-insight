@@ -14,7 +14,7 @@ from agents.chatbot_qa.agent import qa_agent
 from agents.supervisor.agent import supervisor_agent
 from langgraph.pregel import Pregel
 from langchain_core.messages import AIMessage
-from utils import (
+from core.utils import (
     handle_input_slides, 
     handle_market_size,
     handle_complete,
@@ -23,11 +23,11 @@ from utils import (
     handle_qa_input, 
     handle_github_link
 )
-from schema import (
+from core.schema import (
     ChatMessage,
     UserInput,
 )
-from utils import (
+from core.utils import (
     langchain_to_chat_message,
 )
 

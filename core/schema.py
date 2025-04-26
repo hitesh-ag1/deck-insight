@@ -2,7 +2,7 @@ from typing import Any, Literal, NotRequired
 
 from pydantic import BaseModel, Field, SerializeAsAny
 from typing_extensions import TypedDict
-from settings import settings
+from core.settings import settings
 
 class UserInput(BaseModel):
     """Basic user input for the agent."""
