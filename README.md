@@ -14,6 +14,8 @@ Perfect for investors, analysts, startup competitions, accelerators, and ecosyst
 
 ![Alt text](docs/flowchart.png)
 
+Observability on AI agents are implemented through LangSmith.
+
 ---
 
 ## 🛠 Output Preview
@@ -67,6 +69,16 @@ Add your API keys to .env
 ```bash
 uvicorn main:app --reload
 ```
+
+6. Test the API with sample decks under ```examples``` folder:
+```bash
+# Use any deck from the examples/ directory to test
+curl -X POST "http://localhost:8000/analyze-complete" \
+  -H "Content-Type: application/json" \
+  -d '{"file_path": "examples/MapMe-Pitch-Deck.pdf"}'
+
+# Or use the Swagger UI at http://localhost:8000/docs to test interactively
+```
 ---
 
 
@@ -109,9 +121,9 @@ uvicorn main:app --reload
 |:---|:---|
 | Vision Model | Gemini 2.0 Flash |
 | Language Model | GPT-4o-mini |
-| Agent Orchestration | [LangGraph](https://langgraph.readthedocs.io/) |
-| API Server | [FastAPI](https://fastapi.tiangolo.com/) |
-| Web Search | [Tavily API](https://docs.tavily.com/) |
+| Agent Orchestration | [LangGraph](https://www.langchain.com/langgraph) |
+| API Server | [FastAPI](https://fastapi.tiangolo.com) |
+| Web Search | [Tavily API](https://tavily.com/) |
 | Web Scraping | [Firecrawl](https://firecrawl.dev/) |
 | Vector Database (RAG) | [Elasticsearch](https://www.elastic.co/elasticsearch/) |
 
@@ -155,6 +167,7 @@ pitch_deck/
 ## 🧩 Future Roadmap
 
 - Advanced financial modeling (projections, valuation sanity checks)
+- Comprehensive prompt testing using [Promptfoo](https://github.com/promptfoo/promptfoo)
 - API and plugin integrations (e.g., Crunchbase, LinkedIn)
 - Chrome extension for sourcing decks from web
 - Support for multiple decks comparison
