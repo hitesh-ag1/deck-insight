@@ -12,6 +12,19 @@
 Fully extensible and customizable for your workflows.  
 Perfect for investors, analysts, startup competitions, accelerators, and ecosystem builders.
 
+![Alt text](docs/flowchart.png)
+
+---
+
+## 🛠 Output Preview
+
+> **Note**: This repository contains only the backend implementation. The screenshots below are from a separate frontend integration built using [Lovable](https://lovable.dev), showcasing how the API endpoints can be consumed and displayed in a user interface.
+
+![Alt text](docs/sample_score.png)
+![Alt text](docs/sample_summary.png)
+
+
+
 ---
 
 ## 🛠 How It Works
@@ -112,6 +125,30 @@ uvicorn main:app --reload
 - ```POST /analyze-market-size```: Market research analysis
 - ```POST /analyze-github-repository```: GitHub repository evaluation
 - ```POST /chat-assistant```: Interactive Q&A about the pitch deck
+
+---
+
+## 📂 Project Structure
+
+```
+pitch_deck/
+├── .env.example         # Example environment variables template
+├── README.md             # Project documentation
+├── main.py               # FastAPI application entry point
+├── requirements.txt      # Project dependencies
+├── core/                 # Core functionality and utilities
+│   ├── prompts.py        # AI model prompts and templates
+│   ├── schema.py         # Shared data models and schemas
+│   ├── settings.py       # Application configuration
+│   └── utils.py          # Shared utility functions
+└── agents/               # AI agents for different analysis tasks
+    ├── <agent_name>/     # Each agent has a modular folder
+    │   ├── agent.py      # Agent logic and workflow
+    │   ├── helpers.py    # Helper functions (optional)
+    │   ├── models.py     # Agent-specific data models
+    │   └── nodes.py      # LangGraph nodes defining steps
+```
+
 
 ---
 
